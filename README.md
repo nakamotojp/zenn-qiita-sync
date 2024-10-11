@@ -12,10 +12,20 @@ This tool automatically publishes articles to qiita when you push zenn format ar
 
 ## 🚀 Getting Started
 You can use this tool by following the steps below.
-1. Introduce `qiita-cli` to issue the Qiita access token.
+1. Build directory structure as follows
+    ```
+    .
+    ├── articles   ... Zenn format articles
+    ├── books      ... Zenn books (optional)
+    ├── images     ... Image files used in articles
+    └── qiita
+        └── public ... Qiita format articles
+    ```
+
+2. Issue the Qiita access token using `qiita-cli`.
     - I refer you to visit [official repo](https://github.com/increments/qiita-cli/tree/v1) for details.
 
-2. Set the issued token as a secret variable.
+3. Set the issued token as a secret variable.
    - Go to `https://github.com/<USERNAME>/<REPO>/settings/secrets/actions/new` (by replacing `<USERNAME>` and `<REPO>` with your information).
    - Set the value as `QIITA_TOKEN = <Your Qiita Access Token>`.
 
@@ -23,7 +33,7 @@ You can use this tool by following the steps below.
         <img src="./assets/secrets.png" align=center />
         </p>
 
-3. Create a new workflow (e.g., `publish.yml`) within `.github/workflows` in your own repository.
+4. Create a new workflow (e.g., `publish.yml`) within `.github/workflows` in your own repository.
 
     <b>Example</b> (Feel free to copy and paste the following)
 
@@ -59,13 +69,13 @@ You can use this tool by following the steps below.
             with:
               qiita-token: ${{ secrets.QIITA_TOKEN }}
     ```
-    Refer [repo](https://github.com/C-Naoki/zenn-archive/tree/feat/naoki/github-actions) using this tool for practical example.
+    Refer my [repo](https://github.com/C-Naoki/zenn-archive/tree/feat/naoki/github-actions) using this tool for practical example.
 
 ## 🙋‍♂️ Support
 💙 If you like this app, give it a ⭐ and share it with friends!
 
 ## ✉️ Contact
-💥 For questions or issues, feel free to open an issue. I appreciate your feedback and look forward to hearing from you!
+💥 For questions or issues, feel free to open an [issue](https://github.com/C-Naoki/zenn-qiita-sync/issues). I appreciate your feedback and look forward to hearing from you!
 
 ## 🙏 Acknowledgement
 I appreciate the following articles and open sources for providing useful information and valuable codes:
