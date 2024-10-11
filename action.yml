@@ -5,7 +5,7 @@ author: Naoki Chihara
 inputs:
   root:
     required: false
-    default: "."
+    default: "./qiita"
     description: "Root directory path"
   qiita-token:
     required: true
@@ -60,5 +60,5 @@ runs:
       uses: increments/qiita-cli/actions/publish@v1
       with:
         qiita-token: ${{ inputs.qiita-token }}
-        root: "./qiita"
+        root: ${{ inputs.root }}
         commit-message: ${{ inputs.qiitacli-commit-message }}
