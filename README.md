@@ -69,7 +69,7 @@ You can use this tool by following the steps below.
             with:
               qiita-token: ${{ secrets.QIITA_TOKEN }}
     ```
-    Refer my [repo](https://github.com/C-Naoki/zenn-archive/tree/feat/naoki/github-actions) using this tool for practical example.
+    Refer my [repo](https://github.com/C-Naoki/zenn-archive/tree/main) using this tool for practical example.
 
 ## 🙋‍♂️ Support
 💙 If you like this app, give it a ⭐ and share it with friends!
