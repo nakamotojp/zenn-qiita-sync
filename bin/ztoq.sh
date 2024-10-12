@@ -2,16 +2,16 @@
 
 FILE=$1
 
-FILENAME=$(basename $FILE .md)
-if [ $FILE != ./articles/* ]; then
-    if [ -e "qiita/public/$FILENAME.md" ]; then
+FILENAME=$(basename "$FILE" .md)
+if [[ "$FILE" != ./articles/* ]]; then
+    if [[ -f "qiita/public/$FILENAME.md" ]]; then
         echo "delete qiita/public/$FILENAME.md cuz it's not included in articles/"
         rm "qiita/public/$FILENAME.md"
     fi
     exit 0
 fi
 
-if [ ! -e "qiita/public/$FILENAME.md" ] && grep -q "published: true" "$FILE"; then
+if [[ ! -f "qiita/public/$FILENAME.md" ]] && grep -q "published: true" "$FILE"; then
     cd ./qiita
     echo "generate qiita/public/$FILENAME.md"
     npx qiita new "$FILENAME"
