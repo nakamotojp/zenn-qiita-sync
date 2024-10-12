@@ -46,6 +46,7 @@ runs:
         for file in $(cat changed_files.txt); do
           bash bin/ztoq.sh "$file"
         done
+        rm changed_files.txt
       shell: bash
       working-directory: ${{ github.action_path }}
       if: steps.files.outcome == 'success'
