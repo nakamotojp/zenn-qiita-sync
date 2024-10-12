@@ -1,8 +1,10 @@
 #!/bin/bash
 
 FILE=$1
-
 FILENAME=$(basename "$FILE" .md)
+
+echo "Converting $FILE to Qiita format 🚀"
+
 if [[ "$FILE" != ./articles/* ]]; then
     if [[ -f "qiita/public/$FILENAME.md" ]]; then
         echo "delete qiita/public/$FILENAME.md cuz it's not included in articles/"
