@@ -46,7 +46,6 @@ runs:
         for file in $(cat changed_files.txt); do
           bash bin/ztoq.sh "$file"
         done
-        rm changed_files.txt
       shell: bash
       working-directory: ${{ github.action_path }}
       if: steps.files.outcome == 'success'
@@ -56,7 +55,7 @@ runs:
         git config --local user.name ${{ github.actor }}
         git config --local user.email ${{ github.actor }}@users.noreply.github.com
         git add qiita/public/*.md
-        git commit -m "${{ inputs.convert-commit-message }}"
+        git commit -m "${{ inputs.convert-commit-message }}" --no-verify
         git push
       shell: bash
       if: steps.files.outcome == 'success'
