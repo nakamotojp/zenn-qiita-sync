@@ -2,11 +2,14 @@
 
 FILE=$1
 
+FILENAME=$(basename $FILE .md)
 if [ $FILE != ./articles/* ]; then
+    if [ -e "qiita/public/$FILENAME.md" ]; then
+        rm "qiita/public/$FILENAME.md"
+    fi
     exit 0
 fi
 
-FILENAME=$(basename $FILE .md)
 if [ ! -e "qiita/public/$FILENAME.md" ] && grep -q "published: true" "$FILE"; then
     cd ./qiita
     npx qiita new "$FILENAME"
