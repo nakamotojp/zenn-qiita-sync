@@ -30,6 +30,8 @@ runs:
     - name: Install dependencies
       run: npm install
       shell: bash
+      with:
+        working-directory: ${{ github.action_path }}
 
     - name: Get changed markdown files
       id: files
@@ -39,6 +41,8 @@ runs:
         cat changed_files.txt
       continue-on-error: true
       shell: bash
+      with:
+        working-directory: ${{ github.action_path }}
 
     - name: Convert Zenn articles to Qiita format
       run: |
@@ -46,6 +50,8 @@ runs:
           bash bin/ztoq.sh "$file"
         done
       shell: bash
+      with:
+        working-directory: ${{ github.action_path }}
       if: steps.files.outcome == 'success'
 
     - name: Commit converted Qiita articles
