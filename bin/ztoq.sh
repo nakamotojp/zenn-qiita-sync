@@ -2,8 +2,8 @@
 
 FILE=$1
 
-if [[ $FILE != ./articles/* ]]; then
-    continue
+if [ $FILE != ./articles/* ]; then
+    exit 0
 fi
 
 FILENAME=$(basename $FILE .md)
