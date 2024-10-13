@@ -37,7 +37,7 @@ runs:
       id: files
       run: |
         git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep "^articles/.*\.md$" > $GITHUB_WORKSPACE/changed_files.txt
-        echo "Changed markdown files:"
+        echo "📋 Changed markdown files:"
         cat $GITHUB_WORKSPACE/changed_files.txt
       continue-on-error: true
       shell: bash
@@ -63,7 +63,7 @@ runs:
           fi
 
           echo "🚚 Convert $file to qiita/public/$filename.md"
-          ./node_modules/.bin/ts-node --project ${{ github.action_path }}/tsconfig.json ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$filename.md"
+          ./node_modules/.bin/ts-node --files --project ${{ github.action_path }}/tsconfig.json ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$filename.md"
         done
       shell: bash
       if: steps.files.outcome == 'success'
