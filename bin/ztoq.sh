@@ -6,6 +6,7 @@ FILENAME=$(basename "$FILE" .md)
 echo "Converting $FILE to Qiita format 🚀"
 
 if [[ "$FILE" != ./articles/* ]]; then
+    echo "invalid file path: $FILE"
     if [[ -f "qiita/public/$FILENAME.md" ]]; then
         echo "delete qiita/public/$FILENAME.md cuz it's not included in articles/"
         rm "qiita/public/$FILENAME.md"
