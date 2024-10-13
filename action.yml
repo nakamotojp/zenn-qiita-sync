@@ -46,7 +46,7 @@ runs:
         for file in $(cat $GITHUB_WORKSPACE/changed_files.txt); do
           filename=$(basename "$file" .md)
           echo "🚀 Convert $file to Qiita format"
-          if [[ "$file" != ./articles/* ]]; then
+          if [[ "$file" != articles/* ]]; then
             echo "invalid file path: $file"
             if [[ -f "qiita/public/$filename.md" ]]; then
               echo "delete qiita/public/$filename.md cuz it's not included in articles/"
