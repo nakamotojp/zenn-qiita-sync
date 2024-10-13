@@ -48,7 +48,7 @@ runs:
           filename=$(basename "$file" .md)
           echo "🚀 Convert $file to Qiita format"
           if [[ "$file" != articles/* ]]; then
-            echo "invalid file path: $file"
+            echo "⚠️ invalid file path: $file"
             if [[ -f "qiita/public/$filename.md" ]]; then
               echo "delete qiita/public/$filename.md cuz it's not included in articles/"
               rm "qiita/public/$filename.md"
@@ -63,7 +63,7 @@ runs:
           fi
 
           echo "🚚 Convert $file to qiita/public/$filename.md"
-          ./node_modules/.bin/ts-node --project ${{ github.action_path }}/tsconfig.json ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$file.md"
+          ./node_modules/.bin/ts-node --project ${{ github.action_path }}/tsconfig.json ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$filename.md"
         done
       shell: bash
       if: steps.files.outcome == 'success'
