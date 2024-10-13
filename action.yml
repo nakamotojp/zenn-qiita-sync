@@ -28,9 +28,10 @@ runs:
         node-version: '21'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install @types/yargs git-url-parse yargs zenn-cli
+        npm install --save-dev @qiita/qiita-cli @types/git-url-parse @types/js-yaml @types/node ts-node typescript
       shell: bash
-      working-directory: ${{ github.action_path }}
 
     - name: Get changed markdown files
       id: files
