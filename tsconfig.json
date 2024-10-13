@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
+    "typeRoots": ["./node_modules/@types"],
   },
-  "include": ["scripts/ztoq.tsx"]
+  "include": ["scripts/**/*.tsx"]
 }
