@@ -62,8 +62,8 @@ runs:
             cd ../
           fi
 
-          echo "🚚 Convert $file to qiita/public/$FILENAME.md"
-          ./node_modules/.bin/ts-node ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$file.md"
+          echo "🚚 Convert $file to qiita/public/$filename.md"
+          ./node_modules/.bin/ts-node --project ${{ github.action_path }}/tsconfig.json ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$file.md"
         done
       shell: bash
       if: steps.files.outcome == 'success'
