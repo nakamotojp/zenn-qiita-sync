@@ -55,15 +55,17 @@ runs:
             continue
           fi
 
-          if [[ ! -f "qiita/public/$filename.md" ]] && grep -q "published: true" "$file"; then
-            echo "🌱 Create new Qiita article"
-            cd ./qiita
-            npx qiita new "$filename"
-            cd ../
+          if grep -q "published: true" "$file"; then
+            if [[ ! -f "qiita/public/$filename.md" ]]; then
+              echo "🌱 Create new Qiita article"
+              cd ./qiita
+              npx qiita new "$filename"
+              cd ../
+            fi
+            echo "🚚 Convert $file to qiita/public/$filename.md"
+            node ${{ github.action_path }}/dist/index.js "$file" "./qiita/public/$filename.md"
           fi
 
-          echo "🚚 Convert $file to qiita/public/$filename.md"
-          node ${{ github.action_path }}/dist/index.js "$file" "./qiita/public/$filename.md"
         done
       shell: bash
       if: steps.files.outcome == 'success'
