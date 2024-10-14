@@ -1,15 +1,17 @@
 {
-  "name": "zenn-archive",
+  "name": "zenn-qiita-sync",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "ncc build scripts/ztoq.tsx -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@actions/core": "^1.11.1",
     "@types/yargs": "^17.0.33",
     "git-url-parse": "^15.0.0",
     "yargs": "^17.7.2",
@@ -20,6 +22,7 @@
     "@types/git-url-parse": "^9.0.3",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.7.4",
+    "@vercel/ncc": "^0.38.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   }
