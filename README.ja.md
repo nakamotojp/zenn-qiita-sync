@@ -2,8 +2,8 @@
 <p align="left">
    <img src="https://img.shields.io/badge/language-typescript-blue?style"/>
    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/anmol098/waka-readme-stats"/></a>
-   <img src="https://img.shields.io/badge/English-README-informational.svg"/>
-   <img src="https://img.shields.io/badge/日本語-README-informational.svg"/>
+   <a href="./README.md"><img src="https://img.shields.io/badge/English-README-informational.svg"/></a>
+   <a href="./README.ja.md"><img src="https://img.shields.io/badge/日本語-README-informational.svg"/></a>
    <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
 </p>
 
