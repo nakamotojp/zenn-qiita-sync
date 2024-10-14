@@ -27,12 +27,6 @@ runs:
       with:
         node-version: '21'
 
-    - name: Install dependencies
-      run: |
-        npm install @types/yargs git-url-parse yargs zenn-cli
-        npm install --save-dev @qiita/qiita-cli @types/git-url-parse @types/js-yaml @types/node ts-node typescript
-      shell: bash
-
     - name: Get changed markdown files
       id: files
       run: |
@@ -63,7 +57,7 @@ runs:
           fi
 
           echo "🚚 Convert $file to qiita/public/$filename.md"
-          ./node_modules/.bin/ts-node --files --project ${{ github.action_path }}/tsconfig.json ${{ github.action_path }}/scripts/ztoq.tsx "$file" "./qiita/public/$filename.md"
+          node ${{ github.action_path }}/dist/index.js "$file" "./qiita/public/$filename.md"
         done
       shell: bash
       if: steps.files.outcome == 'success'
