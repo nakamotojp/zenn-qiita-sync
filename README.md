@@ -19,7 +19,7 @@ This tool automatically publishes articles to qiita when you push zenn format ar
 </details>
 
 ## 🚀 Getting Started
-You can use this tool by following the steps below.
+You can use this tool by following the steps below. Refer my [repo](https://github.com/C-Naoki/zenn-archive/tree/main) using this tool for practical example.
 1. Build directory structure as follows
     ```
     .
@@ -77,7 +77,6 @@ You can use this tool by following the steps below.
             with:
               qiita-token: ${{ secrets.QIITA_TOKEN }}
     ```
-    Refer my [repo](https://github.com/C-Naoki/zenn-archive/tree/main) using this tool for practical example.
 
 ## 🙋‍♂️ Support
 💙 If you like this app, give it a ⭐ and share it with friends!

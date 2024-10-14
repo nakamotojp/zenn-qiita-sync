@@ -19,7 +19,7 @@ zenn 用の記事を GitHub にプッシュすると、自動的に qiita に記
 </details>
 
 ## 🚀 使い方
-このツールを使用するには、以下の手順に従ってください。
+このツールを使用するには、以下の手順に従ってください。実際にこのツールを使用している例は[こちら](https://github.com/C-Naoki/zenn-archive/tree/main)を参照してください。
 1. 以下のようなディレクトリ構造を準備します。
     ```
     .
@@ -75,7 +75,6 @@ zenn 用の記事を GitHub にプッシュすると、自動的に qiita に記
             with:
               qiita-token: ${{ secrets.QIITA_TOKEN }}
     ```
-    実際にこのツールを使用している例は[こちら](https://github.com/C-Naoki/zenn-archive/tree/main)を参照してください。
 
 ## 🙋‍♂️ お願い
 💙 このツールを気に入っていただけたら、⭐ をつけて、友達にもシェアしてください！
