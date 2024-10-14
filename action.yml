@@ -51,6 +51,7 @@ runs:
           fi
 
           if [[ ! -f "qiita/public/$filename.md" ]] && grep -q "published: true" "$file"; then
+            echo "🌱 Create new Qiita article"
             cd ./qiita
             npx qiita new "$filename"
             cd ../
