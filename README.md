@@ -1,9 +1,12 @@
-<div align="right">
-    <a href="./README.ja.md">[日本語]</a>
-    <a href="./README.md">[English]</a>
-</div>
-
 # zenn-qiita-sync
+<p align="left">
+   <img src="https://img.shields.io/badge/language-typescript-blue?style"/>
+   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/anmol098/waka-readme-stats"/></a>
+   <img src="https://img.shields.io/badge/English-README-informational.svg"/>
+   <img src="https://img.shields.io/badge/日本語-README-informational.svg"/>
+   <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
+</p>
+
 This tool automatically publishes articles to qiita when you push zenn format articles to GitHub. Publishing your articles to multiple platforms can share your knowledge with more people.
 
 <details>
