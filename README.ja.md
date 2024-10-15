@@ -23,12 +23,20 @@ zenn 用の記事を GitHub にプッシュすると、自動的に qiita に記
 1. 以下のようなディレクトリ構造を準備します。
     ```
     .
-    ├── articles   ... Zenn形式の記事
-    ├── books      ... Zenn形式の本 (任意)
-    ├── images     ... 記事で使用する画像ファイル
+    ├── .github
+    │   └── workflows
+    │       └── publish.yml
+    ├── articles
+    │   └── <Zenn形式の記事>
+    ├── books
+    │   └── <Zenn形式の本 (任意)>
+    ├── images
+    │   └── <記事で使用する画像ファイル>
     └── qiita
-        └── public ... Qiita形式の記事
+        └── public
+            └── <Qiita形式の記事>
     ```
+
 2. `qiita-cli` を使用して Qiita アクセストークンを発行します。
     - 詳しくは[公式リポジトリ](https://github.com/increments/qiita-cli/tree/v1)をご覧ください
 3. 発行したトークンをシークレット変数として設定します。

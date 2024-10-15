@@ -23,11 +23,18 @@ You can use this tool by following the steps below. Refer my [repo](https://gith
 1. Build directory structure as follows
     ```
     .
-    ├── articles   ... Zenn format articles
-    ├── books      ... Zenn books (optional)
-    ├── images     ... Image files used in articles
+    ├── .github
+    │   └── workflows
+    │       └── publish.yml
+    ├── articles
+    │   └── <Zenn format articles>
+    ├── books
+    │   └── <Zenn books (optional)>
+    ├── images
+    │   └── <Image files used in articles>
     └── qiita
-        └── public ... Qiita format articles
+        └── public
+            └── <Qiita format articles>
     ```
 
 2. Issue the Qiita access token using `qiita-cli`.
