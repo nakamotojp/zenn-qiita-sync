@@ -88,3 +88,7 @@ runs:
         qiita-token: ${{ inputs.qiita-token }}
         root: ${{ inputs.root }}
         commit-message: ${{ inputs.qiitacli-commit-message }}
+
+branding:
+  icon: refresh-cw
+  color: green
