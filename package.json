@@ -2,10 +2,10 @@
   "name": "zenn-qiita-sync",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/C-Naoki/zenn-qiita-sync.git"
+    "url": "https://github.com/C-Naoki/zenn-qiita-sync.git"
   },
   "scripts": {
     "build": "ncc build scripts/ztoq.tsx -o dist",
